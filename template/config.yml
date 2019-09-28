@@ -1,0 +1,31 @@
+name: bluesky-marketplace-sale-offer-service
+
+rest:
+  port: 3000
+  context: /sale-offers
+  health_check_path: /health_check
+
+cassandra:
+  hosts:
+    - dev-cassandra-1.atalink.com:9042
+    - dev-cassandra-2.atalink.com:9042
+    - dev-cassandra-3.atalink.com:9042
+  keyspace: bluesky_marketplace
+
+kafka:
+  hosts:
+    #    - localhost:9092
+    - dev-kafka-1.atalink.com:9092
+
+elasticsearch:
+  hosts:
+    - dev-elasticsearch-1.atalink.com:9200
+    - dev-elasticsearch-2.atalink.com:9200
+    - dev-elasticsearch-3.atalink.com:9200
+  indexes:
+    sale_offers: sale_offers
+
+log:
+  hosts:
+    - dev-fluentd.atalink.com:24224
+  level: info

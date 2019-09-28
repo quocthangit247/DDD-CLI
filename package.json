@@ -1,0 +1,27 @@
+{
+  "name": "domain-drive-design-cli",
+  "version": "1.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "description": "A command-line for create folder DDD",
+  "preferGlobal": true,
+  "bin": {
+    "ddd": "./index.js"
+  },
+  "scripts": {
+    "start:dev": "node -r dotenv/config index.js dotenv_config_path=./.env.dev",
+    "start:qc": "node -r dotenv/config index.js dotenv_config_path=./.env."
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "clear": "^0.1.0",
+    "commander": "^3.0.2",
+    "dotenv": "^8.1.0",
+    "figlet": "^1.2.4",
+    "fs-extra": "^8.1.0",
+    "inquirer": "^7.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
+  }
+}

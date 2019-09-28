@@ -1,0 +1,56 @@
+{
+  "name": "bluesky-marketplace-sale-offer",
+  "version": "2.0.1",
+  "description": "marketplace sale offer service",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "build": "rimraf dist && tsc -p tsconfig.json",
+    "prepublish": "yarn build",
+    "format": "prettier --write '{migrations,src}/**/*.ts' '*.{json,yml}'",
+    "start": "nodemon -r ts-node/register -r tsconfig-paths/register -r dotenv/config",
+    "prestart:watch": "yarn build",
+    "start:watch": "nodemon dist/index.js",
+    "start:dev": "nodemon src/index.ts",
+    "start:debug": "nodemon --inspect-brk src/index.ts",
+    "migrate": "bs-migrate",
+    "migrate:dev": "DOTENV_CONFIG_PATH=../../.env bs-migrate",
+    "lint": "tslint -p tsconfig.json -c tslint.json --fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "dev": "node -r dotenv/config index.js dotenv_config_path=./.env.dev"
+  },
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "publishConfig": {
+    "registry": "http://registry.atalink.com:4873"
+  },
+  "dependencies": {
+    "@types/lodash": "^4.14.138",
+    "bluesky-marketplace-common": "2.0.1",
+    "bluesky-service-core": "2.1.13",
+    "lodash": "^4.17.15"
+  },
+  "private": true,
+  "workspaces": [
+    "bluesky-service-core",
+    "bluesky-marketplace-common"
+  ],
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".spec.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  }
+}
