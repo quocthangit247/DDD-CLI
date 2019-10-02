@@ -1,6 +1,6 @@
 {
   "name": "domain-drive-design-cli",
-  "version": "1.1.0",
+  "version": "1.1.6",
   "main": "index.js",
   "license": "MIT",
   "description": "A command-line for create folder DDD",

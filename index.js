@@ -121,7 +121,7 @@ const createFolder = ans => {
     fs.mkdirSync(folderName);
     fs.mkdirSync(srcDir);
     fs.mkdirSync(modulesDir);
-    fse.copySync('./template', folderName);
+    fse.copySync(__dirname.concat('/template'), folderName);
     createIndexFile(srcDir);
     createModuleFile(srcDir, ans.module);
     createModuleService(ans.service, modulesDir, ans.module)
