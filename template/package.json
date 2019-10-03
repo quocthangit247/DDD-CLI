@@ -1,7 +1,7 @@
 {
-  "name": "bluesky-marketplace-sale-offer",
+  "name": "",
   "version": "2.0.1",
-  "description": "marketplace sale offer service",
+  "description": "",
   "author": "",
   "license": "MIT",
   "scripts": {
@@ -30,14 +30,13 @@
   },
   "dependencies": {
     "@types/lodash": "^4.14.138",
-    "bluesky-marketplace-common": "2.0.1",
-    "bluesky-service-core": "2.1.13",
+    "bluesky-ecommerce-common": "2.0.1",
     "lodash": "^4.17.15"
   },
   "private": true,
   "workspaces": [
     "bluesky-service-core",
-    "bluesky-marketplace-common"
+    "bluesky-ecommerce-common"
   ],
   "jest": {
     "moduleFileExtensions": [

@@ -56,7 +56,7 @@ const createAdaptersFolder = (src, name, moduleName) => {
   fs.mkdirSync(dtosDir);
   createModuleFile(adaptersDir, name.concat('-adapters'))
   createIndexFile(restDir);
-  fse.createFile(restDir.concat(`/${name}.rests.ts`));
+  fse.createFile(restDir.concat(`/${name}.rest.ts`));
   if (name.includes('commands')) {
     fse.createFile(dtosDir.concat(`/create-${moduleName}.dto.ts`));
     fse.createFile(dtosDir.concat(`/update-${moduleName}.dto.ts`));
